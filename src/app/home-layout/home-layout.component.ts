@@ -53,237 +53,237 @@ oneventRendered(args: EventRenderedArgs): void {
 
 onPopupOpen(args: PopupOpenEventArgs): void {
   if (args.type === 'Editor') {
-    let PatientstatusElement: HTMLInputElement = args.element.querySelector('#ResourceType') as HTMLInputElement;
-    if (!PatientstatusElement.classList.contains('e-dropdownlist')) {
-        let dropDownListObject: DropDownList = new DropDownList({
-            placeholder: 'Select Type', value: PatientstatusElement.value,
-            dataSource: ['New', 'Requested', 'Confirmed']
-        });
-        dropDownListObject.appendTo(PatientstatusElement);
-        PatientstatusElement.setAttribute('name', 'ResourceType');
-    }
-    let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
-    if (!statusElement.classList.contains('e-dropdownlist')) {
-        let dropDownListObject: DropDownList = new DropDownList({
-            placeholder: 'Select Resource', value: statusElement.value,
-            dataSource: ['New', 'Requested', 'Confirmed']
-        });
-        dropDownListObject.appendTo(statusElement);
-        statusElement.setAttribute('name', 'EventType');
-    }
-    let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
-    if (!startElement.classList.contains('e-datetimepicker')) {
-        new DateTimePicker({ value: new Date(startElement.value) || new Date() }, startElement);
-    }
-    let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
-    if (!endElement.classList.contains('e-datetimepicker')) {
-        new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
-    }
+    // let PatientstatusElement: HTMLInputElement = args.element.querySelector('#ResourceType') as HTMLInputElement;
+    // if (!PatientstatusElement.classList.contains('e-dropdownlist')) {
+    //     let dropDownListObject: DropDownList = new DropDownList({
+    //         placeholder: 'Select Type', value: PatientstatusElement.value,
+    //         dataSource: ['New', 'Requested', 'Confirmed']
+    //     });
+    //     dropDownListObject.appendTo(PatientstatusElement);
+    //     PatientstatusElement.setAttribute('name', 'ResourceType');
+    // }
+    // let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
+    // if (!statusElement.classList.contains('e-dropdownlist')) {
+    //     let dropDownListObject: DropDownList = new DropDownList({
+    //         placeholder: 'Select Resource', value: statusElement.value,
+    //         dataSource: ['New', 'Requested', 'Confirmed']
+    //     });
+    //     dropDownListObject.appendTo(statusElement);
+    //     statusElement.setAttribute('name', 'EventType');
+    // }
+    // let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
+    // if (!startElement.classList.contains('e-datetimepicker')) {
+    //     new DateTimePicker({ value: new Date(startElement.value) || new Date() }, startElement);
+    // }
+    // let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
+    // if (!endElement.classList.contains('e-datetimepicker')) {
+    //     new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
+    // }
     // patients fields
-//         if (!args.element.querySelector('.patient-field-row')) {
-//           let row: HTMLElement = createElement('div', { className: 'patient-field-row' });
-//           let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//           formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-//           let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
-//           let inputEle: HTMLInputElement = createElement('input', {
-//               className: 'e-field e-input e-subject', attrs: { name: 'EventType', placeholder: 'Please enter client or patient name (Optional)' }
-//           }) as HTMLInputElement;
-//           container.appendChild(inputEle);
-//           row.appendChild(container);
-//           inputEle.setAttribute('name', 'EventType');
-//         }
-//   // Link button
-//         if (!args.element.querySelector('.link-field-row')) {
-//           let row: HTMLElement = createElement('div', { className: 'link-field-row' });
-//           let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//          formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
-//           let container: HTMLElement = createElement('div', { className: 'equipment-field-container' });
-//           let anchorEle: HTMLElement = createElement('a', {
-//               className: 'e-field', attrs: { name: 'EventType', href:'https://www.google.com'}
-//           }) as HTMLInputElement;
-//           anchorEle.innerHTML = 'Click to quickly create client and patient'
-//           container.appendChild(anchorEle);
-//           row.appendChild(container);
-//         }
-//  // resource field       
-//     if (!args.element.querySelector('.custom-field-resource')) {
-//       let row: HTMLElement = createElement('div', { className: 'custom-field-resource' });
-//       let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//       formElement.firstChild.insertBefore(row, args.element.querySelector('.patient-field-row'));
-//       let container: HTMLElement = createElement('div', { className: 'custom-field-container1' });
-//       let inputEle: HTMLInputElement = createElement('input', {
-//           className: 'e-field', attrs: { name: 'ResourceType' }
-//       }) as HTMLInputElement;
-//       container.appendChild(inputEle);
-//       row.appendChild(container);
-//       let drowDownList: DropDownList = new DropDownList({
-//           dataSource: [
-//               { text: 'Requested1', value: 'Requested' },
-//               { text: 'Confirmed1', value: 'Confirmed' },
-//               { text: 'New1', value: 'New' },
-//               { text: 'Family Event2', value: 'family-event' }
-//           ],
-//           fields: { text: 'text', value: 'value' },
-//           value: (args.data as { [key: string]: Object }).EventType as string,
-//           floatLabelType: 'Always', placeholder: 'Resource'
-//       });
-//       drowDownList.appendTo(inputEle);
-//       inputEle.setAttribute('name', 'ResourceType');
-//     }
+        if (!args.element.querySelector('.patient-field-row')) {
+          let row: HTMLElement = createElement('div', { className: 'patient-field-row' });
+          let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+          formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
+          let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
+          let inputEle: HTMLInputElement = createElement('input', {
+              className: 'e-field e-input e-subject', attrs: { name: 'EventType', placeholder: 'Please enter client or patient name (Optional)' }
+          }) as HTMLInputElement;
+          container.appendChild(inputEle);
+          row.appendChild(container);
+          inputEle.setAttribute('name', 'EventType');
+        }
+  // Link button
+        if (!args.element.querySelector('.link-field-row')) {
+          let row: HTMLElement = createElement('div', { className: 'link-field-row' });
+          let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+         formElement.firstChild.insertBefore(row, args.element.querySelector('.e-title-location-row'));
+          let container: HTMLElement = createElement('div', { className: 'equipment-field-container' });
+          let anchorEle: HTMLElement = createElement('a', {
+              className: 'e-field', attrs: { name: 'EventType', href:'https://www.google.com'}
+          }) as HTMLInputElement;
+          anchorEle.innerHTML = 'Click to quickly create client and patient'
+          container.appendChild(anchorEle);
+          row.appendChild(container);
+        }
+ // resource field       
+    if (!args.element.querySelector('.custom-field-resource')) {
+      let row: HTMLElement = createElement('div', { className: 'custom-field-resource' });
+      let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+      formElement.firstChild.insertBefore(row, args.element.querySelector('.patient-field-row'));
+      let container: HTMLElement = createElement('div', { className: 'custom-field-container1' });
+      let inputEle: HTMLInputElement = createElement('input', {
+          className: 'e-field', attrs: { name: 'ResourceType' }
+      }) as HTMLInputElement;
+      container.appendChild(inputEle);
+      row.appendChild(container);
+      let drowDownList: DropDownList = new DropDownList({
+          dataSource: [
+              { text: 'Requested1', value: 'Requested' },
+              { text: 'Confirmed1', value: 'Confirmed' },
+              { text: 'New1', value: 'New' },
+              { text: 'Family Event2', value: 'family-event' }
+          ],
+          fields: { text: 'text', value: 'value' },
+          value: (args.data as { [key: string]: Object }).EventType as string,
+          floatLabelType: 'Always', placeholder: 'Resource'
+      });
+      drowDownList.appendTo(inputEle);
+      inputEle.setAttribute('name', 'ResourceType');
+    }
     
-//     if (!args.element.querySelector('.confirm-status')) {
-//       let row: HTMLElement = createElement('div', { className: 'confirm-status' });
-//       let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//       formElement.firstChild.insertBefore(row, args.element.querySelector('.e-start-end-row'));
-//       let container: HTMLElement = createElement('div', { className: 'confirm-status-container' });
-//       let inputEle: HTMLInputElement = createElement('input', {
-//           className: 'e-field', attrs: { name: 'confirmStatusType' }
-//       }) as HTMLInputElement;
-//       container.appendChild(inputEle);
-//       row.appendChild(container);
-//       let drowDownList: DropDownList = new DropDownList({
-//           dataSource: [
-//               { text: 'Requested1', value: 'Requested' },
-//               { text: 'Confirmed1', value: 'Confirmed' },
-//               { text: 'New1', value: 'New' },
-//               { text: 'Family Event2', value: 'family-event' }
-//           ],
-//           fields: { text: 'text', value: 'value' },
-//           value: (args.data as { [key: string]: Object }).EventType as string,
-//           floatLabelType: 'Always', placeholder: 'Confirm status'
-//       });
-//       drowDownList.appendTo(inputEle);
-//       inputEle.setAttribute('name', 'confirmStatusType');
-//     }
-//     if (!args.element.querySelector('.custom-field-status')) {
-//       let row: HTMLElement = createElement('div', { className: 'custom-field-status' });
-//       let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//       formElement.firstChild.insertBefore(row, args.element.querySelector('.confirm-status'));
-//       let container: HTMLElement = createElement('div', { className: 'status-container' });
-//       let inputEle: HTMLInputElement = createElement('input', {
-//           className: 'e-field', attrs: { name: 'StatusType' }
-//       }) as HTMLInputElement;
-//       container.appendChild(inputEle);
-//       row.appendChild(container);
-//       let drowDownList: DropDownList = new DropDownList({
-//           dataSource: [
-//               { text: 'Requested1', value: 'Requested' },
-//               { text: 'Confirmed1', value: 'Confirmed' },
-//               { text: 'New1', value: 'New' },
-//               { text: 'Family Event2', value: 'family-event' }
-//           ],
-//           fields: { text: 'text', value: 'value' },
-//           value: (args.data as { [key: string]: Object }).EventType as string,
-//           floatLabelType: 'Always', placeholder: 'Status '
-//       });
-//       drowDownList.appendTo(inputEle);
-//       inputEle.setAttribute('name', 'StatusType');
-//     }
-//     if (!args.element.querySelector('.custom-field-provider')) {
-//       let row: HTMLElement = createElement('div', { className: 'custom-field-provider' });
-//       let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//       formElement.firstChild.insertBefore(row, args.element.querySelector('.custom-field-status'));
-//       let container: HTMLElement = createElement('div', { className: 'provider-container' });
-//       let inputEle: HTMLInputElement = createElement('input', {
-//           className: 'e-field', attrs: { name: 'ProviderType' }
-//       }) as HTMLInputElement;
-//       container.appendChild(inputEle);
-//       row.appendChild(container);
-//       let drowDownList: DropDownList = new DropDownList({
-//           dataSource: [
-//               { text: 'Requested1', value: 'Requested' },
-//               { text: 'Confirmed1', value: 'Confirmed' },
-//               { text: 'New1', value: 'New' },
-//               { text: 'Family Event2', value: 'family-event' }
-//           ],
-//           fields: { text: 'text', value: 'value' },
-//           value: (args.data as { [key: string]: Object }).EventType as string,
-//           floatLabelType: 'Always', placeholder: 'Primary provider'
-//       });
-//       drowDownList.appendTo(inputEle);
-//       inputEle.setAttribute('name', 'ProviderType');
-//     }
-//       // Create required custom elements in initial time
-//       if (!args.element.querySelector('.custom-field-type')) {
-//           let row: HTMLElement = createElement('div', { className: 'custom-field-type' });
-//           let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//           formElement.firstChild.insertBefore(row, args.element.querySelector('.custom-field-resource'));
-//           let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
-//           let inputEle: HTMLInputElement = createElement('input', {
-//               className: 'e-field', attrs: { name: 'Type' }
-//           }) as HTMLInputElement;
-//           container.appendChild(inputEle);
-//           row.appendChild(container);
-//           let drowDownList: DropDownList = new DropDownList({
-//               dataSource: [
-//                   { text: 'Requested', value: 'Requested' },
-//                   { text: 'Confirmed', value: 'Confirmed' },
-//                   { text: 'New', value: 'New' },
-//                   { text: 'Family Event', value: 'family-event' }
-//               ],
-//               fields: { text: 'text', value: 'value' },
-//               value: (args.data as { [key: string]: Object }).EventType as string,
-//               floatLabelType: 'Always', placeholder: 'Type'
-//           });
-//           drowDownList.appendTo(inputEle);
-//           inputEle.setAttribute('name', 'Type');
-//         }
+    if (!args.element.querySelector('.confirm-status')) {
+      let row: HTMLElement = createElement('div', { className: 'confirm-status' });
+      let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+      formElement.firstChild.insertBefore(row, args.element.querySelector('.e-start-end-row'));
+      let container: HTMLElement = createElement('div', { className: 'confirm-status-container' });
+      let inputEle: HTMLInputElement = createElement('input', {
+          className: 'e-field', attrs: { name: 'confirmStatusType' }
+      }) as HTMLInputElement;
+      container.appendChild(inputEle);
+      row.appendChild(container);
+      let drowDownList: DropDownList = new DropDownList({
+          dataSource: [
+              { text: 'Requested1', value: 'Requested' },
+              { text: 'Confirmed1', value: 'Confirmed' },
+              { text: 'New1', value: 'New' },
+              { text: 'Family Event2', value: 'family-event' }
+          ],
+          fields: { text: 'text', value: 'value' },
+          value: (args.data as { [key: string]: Object }).EventType as string,
+          floatLabelType: 'Always', placeholder: 'Confirm status'
+      });
+      drowDownList.appendTo(inputEle);
+      inputEle.setAttribute('name', 'confirmStatusType');
+    }
+    if (!args.element.querySelector('.custom-field-status')) {
+      let row: HTMLElement = createElement('div', { className: 'custom-field-status' });
+      let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+      formElement.firstChild.insertBefore(row, args.element.querySelector('.confirm-status'));
+      let container: HTMLElement = createElement('div', { className: 'status-container' });
+      let inputEle: HTMLInputElement = createElement('input', {
+          className: 'e-field', attrs: { name: 'StatusType' }
+      }) as HTMLInputElement;
+      container.appendChild(inputEle);
+      row.appendChild(container);
+      let drowDownList: DropDownList = new DropDownList({
+          dataSource: [
+              { text: 'Requested1', value: 'Requested' },
+              { text: 'Confirmed1', value: 'Confirmed' },
+              { text: 'New1', value: 'New' },
+              { text: 'Family Event2', value: 'family-event' }
+          ],
+          fields: { text: 'text', value: 'value' },
+          value: (args.data as { [key: string]: Object }).EventType as string,
+          floatLabelType: 'Always', placeholder: 'Status '
+      });
+      drowDownList.appendTo(inputEle);
+      inputEle.setAttribute('name', 'StatusType');
+    }
+    if (!args.element.querySelector('.custom-field-provider')) {
+      let row: HTMLElement = createElement('div', { className: 'custom-field-provider' });
+      let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+      formElement.firstChild.insertBefore(row, args.element.querySelector('.custom-field-status'));
+      let container: HTMLElement = createElement('div', { className: 'provider-container' });
+      let inputEle: HTMLInputElement = createElement('input', {
+          className: 'e-field', attrs: { name: 'ProviderType' }
+      }) as HTMLInputElement;
+      container.appendChild(inputEle);
+      row.appendChild(container);
+      let drowDownList: DropDownList = new DropDownList({
+          dataSource: [
+              { text: 'Requested1', value: 'Requested' },
+              { text: 'Confirmed1', value: 'Confirmed' },
+              { text: 'New1', value: 'New' },
+              { text: 'Family Event2', value: 'family-event' }
+          ],
+          fields: { text: 'text', value: 'value' },
+          value: (args.data as { [key: string]: Object }).EventType as string,
+          floatLabelType: 'Always', placeholder: 'Primary provider'
+      });
+      drowDownList.appendTo(inputEle);
+      inputEle.setAttribute('name', 'ProviderType');
+    }
+      // Create required custom elements in initial time
+      if (!args.element.querySelector('.custom-field-type')) {
+          let row: HTMLElement = createElement('div', { className: 'custom-field-type' });
+          let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+          formElement.firstChild.insertBefore(row, args.element.querySelector('.custom-field-resource'));
+          let container: HTMLElement = createElement('div', { className: 'custom-field-container' });
+          let inputEle: HTMLInputElement = createElement('input', {
+              className: 'e-field', attrs: { name: 'Type' }
+          }) as HTMLInputElement;
+          container.appendChild(inputEle);
+          row.appendChild(container);
+          let drowDownList: DropDownList = new DropDownList({
+              dataSource: [
+                  { text: 'Requested', value: 'Requested' },
+                  { text: 'Confirmed', value: 'Confirmed' },
+                  { text: 'New', value: 'New' },
+                  { text: 'Family Event', value: 'family-event' }
+              ],
+              fields: { text: 'text', value: 'value' },
+              value: (args.data as { [key: string]: Object }).EventType as string,
+              floatLabelType: 'Always', placeholder: 'Type'
+          });
+          drowDownList.appendTo(inputEle);
+          inputEle.setAttribute('name', 'Type');
+        }
        
-//         // feeding fields
-//         if (!args.element.querySelector('.feeding-field-row')) {
-//           let row: HTMLElement = createElement('div', { className: 'feeding-field-row' });
-//           let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//          formElement.firstChild.insertBefore(row, args.element.querySelector('.e-description-row'));
-//           let container: HTMLElement = createElement('div', { className: 'feeding-field-container' });
-//           let inputEle: HTMLInputElement = createElement('textarea', {
-//               className: 'e-field e-input e-subject', attrs: { name: 'feedingType'}
-//           }) as HTMLInputElement;
-//           let lableEle: HTMLInputElement = createElement('lable', {
-//             className: 'e-field e-input e-subject', attrs: { name: 'FeedingLable'}
-//         }) as HTMLInputElement;
-//         lableEle.innerHTML = 'Feeding instructions'
-//         container.appendChild(lableEle);
-//           container.appendChild(inputEle);
-//           row.appendChild(container);
-//           inputEle.setAttribute('name', 'FeedingType');
-//         }
-//          // equipment fields
-//          if (!args.element.querySelector('.equipment-field-row')) {
-//           let row: HTMLElement = createElement('div', { className: 'equipment-field-row' });
-//           let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//          formElement.firstChild.insertBefore(row, args.element.querySelector('.feeding-field-row'));
-//           let container: HTMLElement = createElement('div', { className: 'equipment-field-container' });
-//           let inputEle: HTMLInputElement = createElement('textarea', {
-//               className: 'e-field e-input e-subject', attrs: { name: 'equipmentType'}
-//           }) as HTMLInputElement;
-//           let lableEle: HTMLInputElement = createElement('lable', {
-//             className: 'e-field e-input e-subject', attrs: { name: 'EquipmentType', value:'equipment'}
-//         }) as HTMLInputElement;
-//         lableEle.innerHTML = 'Equipment' 
-//         container.appendChild(lableEle);
-//           container.appendChild(inputEle);
-//           row.appendChild(container);
-//           inputEle.setAttribute('name', 'EquipmentType');
-//         }
+        // feeding fields
+        if (!args.element.querySelector('.feeding-field-row')) {
+          let row: HTMLElement = createElement('div', { className: 'feeding-field-row' });
+          let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+         formElement.firstChild.insertBefore(row, args.element.querySelector('.e-description-row'));
+          let container: HTMLElement = createElement('div', { className: 'feeding-field-container' });
+          let inputEle: HTMLInputElement = createElement('textarea', {
+              className: 'e-field e-input e-subject', attrs: { name: 'feedingType'}
+          }) as HTMLInputElement;
+          let lableEle: HTMLInputElement = createElement('lable', {
+            className: 'e-field e-input e-subject', attrs: { name: 'FeedingLable'}
+        }) as HTMLInputElement;
+        lableEle.innerHTML = 'Feeding instructions'
+        container.appendChild(lableEle);
+          container.appendChild(inputEle);
+          row.appendChild(container);
+          inputEle.setAttribute('name', 'FeedingType');
+        }
+         // equipment fields
+         if (!args.element.querySelector('.equipment-field-row')) {
+          let row: HTMLElement = createElement('div', { className: 'equipment-field-row' });
+          let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+         formElement.firstChild.insertBefore(row, args.element.querySelector('.feeding-field-row'));
+          let container: HTMLElement = createElement('div', { className: 'equipment-field-container' });
+          let inputEle: HTMLInputElement = createElement('textarea', {
+              className: 'e-field e-input e-subject', attrs: { name: 'equipmentType'}
+          }) as HTMLInputElement;
+          let lableEle: HTMLInputElement = createElement('lable', {
+            className: 'e-field e-input e-subject', attrs: { name: 'EquipmentType', value:'equipment'}
+        }) as HTMLInputElement;
+        lableEle.innerHTML = 'Equipment' 
+        container.appendChild(lableEle);
+          container.appendChild(inputEle);
+          row.appendChild(container);
+          inputEle.setAttribute('name', 'EquipmentType');
+        }
 
-//         // medication fields
-//        if (!args.element.querySelector('.medication-field-row')) {
-//         let row: HTMLElement = createElement('div', { className: 'medication-field-row' });
-//         let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
-//        formElement.firstChild.insertBefore(row, args.element.querySelector('.equipment-field-row'));
-//         let container: HTMLElement = createElement('div', { className: 'medication-field-container' });
-//         let inputEle: HTMLInputElement = createElement('textarea', {
-//             className: 'e-field e-input e-subject', attrs: { name: 'medicationType'}
-//         }) as HTMLInputElement;
-//         let lableEle: HTMLInputElement = createElement('lable', {
-//           className: 'e-field e-input e-subject', attrs: { name: 'medication-lable'}
-//       }) as HTMLInputElement;
-//       lableEle.innerHTML = 'Medication'
-//       container.appendChild(lableEle);
-//         container.appendChild(inputEle);
-//         row.appendChild(container);
-//         inputEle.setAttribute('name', 'MedicationType');
-//       }
+        // medication fields
+       if (!args.element.querySelector('.medication-field-row')) {
+        let row: HTMLElement = createElement('div', { className: 'medication-field-row' });
+        let formElement: HTMLElement = <HTMLElement>args.element.querySelector('.e-schedule-form');
+       formElement.firstChild.insertBefore(row, args.element.querySelector('.equipment-field-row'));
+        let container: HTMLElement = createElement('div', { className: 'medication-field-container' });
+        let inputEle: HTMLInputElement = createElement('textarea', {
+            className: 'e-field e-input e-subject', attrs: { name: 'medicationType'}
+        }) as HTMLInputElement;
+        let lableEle: HTMLInputElement = createElement('lable', {
+          className: 'e-field e-input e-subject', attrs: { name: 'medication-lable'}
+      }) as HTMLInputElement;
+      lableEle.innerHTML = 'Medication'
+      container.appendChild(lableEle);
+        container.appendChild(inputEle);
+        row.appendChild(container);
+        inputEle.setAttribute('name', 'MedicationType');
+      }
         
        
         

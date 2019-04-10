@@ -22,7 +22,7 @@
   <div class="control-section">
       <ejs-schedule  #scheduleObj id="schedule" class="calendar" [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
       (popupOpen)="onPopupOpen($event)" (eventRendered)="oneventRendered($event)" (actionComplete)="onActionComplete($event)" cssClass='schedule-excel-export' (actionBegin)="onActionBegin($event)">
-      <e-views>
+      <!-- <e-views>
           <e-view option="Day"></e-view>
           <e-view option="Week"></e-view>
           <e-view option="WorkWeek"></e-view>
@@ -96,7 +96,7 @@
                   </tr>
               </tbody>
           </table>
-      </ng-template>
+      </ng-template> -->
       </ejs-schedule>
       
   </div>
