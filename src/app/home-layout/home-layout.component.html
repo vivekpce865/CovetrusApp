@@ -1,0 +1,105 @@
+<div class="home-container">
+  <div class="appointment">
+      <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+      <span>Appointment</span>
+    </div>
+    <div id="Legend" class="legend">
+              <div style="overflow: auto; max-height: 150px;">
+                          <li>Standard: <span style="background-color: #375D9E;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Canine House Call: <span style="background-color: #6600FF;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Surgical: <span style="background-color: #FF9933;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Grooming: <span style="background-color: #339966;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>UNAVAILABLE: <span style="background-color: #646471;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Emergency: <span style="background-color: #FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Recheck: <span style="background-color: #33CC33;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Standard Checked In: <span style="background-color: #66FFFF;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Dr. B Available: <span style="background-color: #A352CC;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Sick: <span style="background-color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Wellness: <span style="background-color: #0099ff;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                          <li>Report Visit: <span style="background-color: #99ffcc;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+              </div>
+    </div>
+  <div class="control-section">
+      <ejs-schedule  #scheduleObj id="schedule" class="calendar" [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+      (popupOpen)="onPopupOpen($event)" (eventRendered)="oneventRendered($event)" (actionComplete)="onActionComplete($event)" cssClass='schedule-excel-export' (actionBegin)="onActionBegin($event)">
+      <e-views>
+          <e-view option="Day"></e-view>
+          <e-view option="Week"></e-view>
+          <e-view option="WorkWeek"></e-view>
+          <e-view option="Month"></e-view>
+      </e-views>
+      <ng-template #editorTemplate>
+          <table class="custom-event-editor" width="100%" cellpadding="6">
+              <tbody>
+                  <tr>
+                      <td class="e-textlabel">Summary</td>
+                      <td colspan="4">
+                          <input id="Subject" class="e-field e-input" type="text" value="" name="Subject" style="width: 100%" />
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">Type *</td>
+                      <td colspan="4">
+                          <input type="text" id="EventType" name="EventType" class="e-field" style="width: 100%" />
+                      </td>
+                  </tr>
+                   <tr>
+                      <td class="e-textlabel">Resource</td>
+                      <td colspan="4">
+                          <input type="text" id="ResourceType" name="EventType" placeholder="adsas" class="e-field" style="width: 100%" />
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">Patient</td>
+                      <td colspan="4">
+                          <input type="text" id="PatientType" name="EventType" class="e-field" placeholder="adsas" style="width: 100%" />
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">Appointment Start *</td>
+                      <td colspan="4">
+                          <input id="StartTime" class="e-field" type="text" name="StartTime" />
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">Appointment End *</td>
+                      <td colspan="4">
+                          <input id="EndTime" class="e-field" type="text" name="EndTime" />
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">Description</td>
+                      <td colspan="4">
+                          <textarea id="Description" class="e-field e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">
+                          Feeding Instructions</td>
+                      <td colspan="4">
+                          <textarea id="Description" class="e-field e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">
+                          Equipment</td>
+                      <td colspan="4">
+                          <textarea id="Description" class="e-field e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="e-textlabel">
+                          Medications</td>
+                      <td colspan="4">
+                          <textarea id="Description" class="e-field e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </ng-template>
+      </ejs-schedule>
+      
+  </div>
+  
+</div>
+  

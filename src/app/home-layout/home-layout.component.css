@@ -1,0 +1,60 @@
+.home-container{
+    margin-top: 80px;
+    margin-left: 6%;
+}
+.home-container .appointment{
+    /* margin: 4px 5px 0px 15px; */
+    font-size: 20px;
+    display: flex;
+}
+.home-container .fa-calendar{
+    margin: 5px 5px 0px 0px;
+}
+.home-container .legend{
+    width: 75%;
+    display: flex;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    line-height: 31px;
+}
+.home-container .legend li{
+    padding-right: 5px;
+     display: inline-block;
+      list-style: none;
+       white-space: nowrap;
+}
+.calendar{
+    width: 75% !important;
+    height: 440px !important;
+    border-radius: 9px;
+    border-color: black;
+}
+#_dialog_wrapper{
+    max-height: 650px;
+    z-index: 1003;
+    width: 500px;
+    left: 0px;
+    top: 0px;
+    position: relative;
+}
+.e-active-view{
+    color: #e3165b !important;
+}
+/* .e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text {
+    color:navajowhite !important;
+} */
+#schedule_dialog_wrapper{
+    max-height: 550px !important;
+    z-index: 1003;
+    width: 600px !important;
+    left: 0px;
+    top: 0px;
+    position: relative;
+}
+.patient-field-row .e-subject{
+    padding: 10px 1px 10px 0px !important;
+}
+.e-title-location-row{
+    display:none !important;
+}

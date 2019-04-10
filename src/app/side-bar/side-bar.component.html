@@ -1,0 +1,43 @@
+<div class="control-section">
+    <div class="col-lg-12 col-sm-12 col-md-12" id="sidebar-section">
+        <div id="wrapper">
+            <title>Essential JS 2 for Angular - Sidebar > Dock</title>
+            <!-- Sidebar element declaration -->
+            <ejs-sidebar #dockBar id="dockSidebar" class="sidebar-top" [enableDock]='enableDock' [width]='width' [dockSize]='dockSize'>
+                <div class="dock">
+                    <ul>
+                        <li class="sidebar-item" id="toggle" (click)="toggleClick()">
+                            <span class="e-icons expand" title="menu"></span>
+                            <span class="e-text" title="menu">Menu</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <span class="e-icons home"  routerLink="/home" title="home"></span>
+                            <span class="e-text"   routerLink="/home" title="home">Home</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <span class="e-icons profile"  routerLink="/whiteboards"></span>
+                            <span class="e-text" title="profile" routerLink="/whiteboards">Profile</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <span class="e-icons info"></span>
+                            <span class="e-text" title="info">Info</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <span class="e-icons settings"></span>
+                            <span class="e-text" title="settings">Settings</span>
+                        </li>
+                    </ul>
+                </div>
+            </ejs-sidebar>
+            <!-- <div id="main-content container-fluid col-md-12 ">
+                <div class="title">Main content</div>
+                <div class="sub-title">
+                    <app-home-layout></app-home-layout>
+                </div>
+            </div> -->
+            <div>
+            </div>
+        </div>
+    </div>
+
+</div>
