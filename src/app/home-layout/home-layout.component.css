@@ -1,5 +1,5 @@
 .home-container{
-    margin-top: 80px;
+    margin-top: 10px;
     margin-left: 6%;
 }
 .home-container .appointment{
@@ -11,7 +11,7 @@
     margin: 5px 5px 0px 0px;
 }
 .home-container .legend{
-    width: 75%;
+    width: 100%;
     display: flex;
     border: 1px solid;
     border-radius: 8px;
@@ -41,9 +41,9 @@
 .e-active-view{
     color: #e3165b !important;
 }
-/* .e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text {
-    color:navajowhite !important;
-} */
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn-text {
+    color:none;
+}
 #schedule_dialog_wrapper{
     max-height: 550px !important;
     z-index: 1003;
@@ -57,4 +57,42 @@
 }
 .e-title-location-row{
     display:none !important;
+}
+.lable-color{
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+.link-container{
+    padding: 5px 0 5px;
+}
+.link-container .e-field{
+    border-bottom: 1px solid;
+    color: black;
+}
+.link-container .e-field :hover{
+    border-bottom: 1px solid;
+}
+.e-active-view{
+    color: rgba(179, 45, 45, 0.87) !important;
+}
+
+
+.search-customization{
+    width: 25% !important;
+    padding: 10px !important;
+}
+.property-panel-section{
+    padding: 10px !important;
+    border: 1px solid !important;
+    border-radius: 5px !important;
+}
+.header-customization{
+    font-weight: bold !important;
+}
+#grid.e-control{
+width: 75% !important;
+}
+.button-search{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
 }

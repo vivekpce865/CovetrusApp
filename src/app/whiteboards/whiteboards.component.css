@@ -1,0 +1,61 @@
+.whiteboard-container{
+    margin-left: 6%;
+}.whiteboard-card{
+    height: 290px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: auto;
+    background-color: #ffffff;
+    padding: .5em 1em;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.overflow-ellipsis{
+    flex: 1 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    margin: 0;
+    font-size: 14px;
+}
+.column-container{
+    background-color: rgb(255, 255, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin-bottom: .5rem;
+    border-radius: 5px;
+    padding: .2rem .3rem;
+    font-size: 14px;
+}
+.appointment-label{
+    margin: 10px 0px 0px;
+    font-size: 17px !important;
+    font-weight: bold;
+}
+.appointment-status{
+    display: flex;
+}
+.patient-details{    
+    margin-right: 16px;
+    height: auto;
+    background: yellowgreen;
+    border-radius: 5px;
+    color:#fff;
+}
+.appointment-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.card-data{
+    width: 25%;
+    padding: 5px;
+}
+
+

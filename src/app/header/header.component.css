@@ -1,5 +1,5 @@
 .topbar-revolution{
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     right: 0;
     top: 0;
@@ -126,10 +126,6 @@
  
  .navbar a:hover {
    background-color: #000;
- }
- 
- .active {
-   background-color: #4CAF50;
  }
 .layer2{
     float: right;

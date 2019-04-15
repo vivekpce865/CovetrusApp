@@ -19,7 +19,7 @@
                           <li>Report Visit: <span style="background-color: #99ffcc;">&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
               </div>
     </div>
-  <div class="control-section">
+  <div class="control-section d-inline-flex">
       <ejs-schedule  #scheduleObj id="schedule" class="calendar" [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
       (popupOpen)="onPopupOpen($event)" (eventRendered)="oneventRendered($event)" (actionComplete)="onActionComplete($event)" cssClass='schedule-excel-export' (actionBegin)="onActionBegin($event)">
       <!-- <e-views>
@@ -98,7 +98,63 @@
           </table>
       </ng-template> -->
       </ejs-schedule>
+      <div id="grid"></div>
       
+      <div class="property-section search-customization">
+            <div class="property-panel-section">
+                <p class="property-panel-header header-customization" style="width: 100%">Search by all event fields</p>
+                <div class="property-panel-content">
+                <input type="text" class="e-input" id="events-search" placeholder="Enter the Search text" (keyup)="globalSearch($event)" />
+                   <div class="button-search">
+                    <button id="seperateSearch" type="button" class="btn-class e-control e-btn e-lib" content="Search" (click)="globalSearch($event)">Search</button>    
+                    <button id="clear" content="Clear" class="btn-class e-control e-btn e-lib" type="button" (click)='clearOnClick()'>Clear</button>
+                </div>
+                    <!-- <td class="e-field button-customization" style="width: 50%;">
+                        </div>
+                        <button ejs-button id="seperateSearch" type="button" content="Search" (click)="searchOnClick()"></button>
+                            </td> -->
+                
+                <!-- <form class="event-search" id="form-search">
+                    <p class="property-panel-header  header-customization" style="width: 100%">Search by specific event fields</p>
+                    <table id="property-specific" style="width: 100%">
+                        <tbody>
+                            <tr class="row">
+                                <td class="property-panel-content" colspan="2">
+                                    <input #subject type="text" class="e-input e-subject" name="Subject" id="Subject"
+                                        placeholder="Subject" />
+                                </td>
+                            </tr>
+                            <tr class="row" style="height: 45px">
+                                <td class="property-panel-content" colspan="2">
+                                    <input #location type="text" class="e-input e-location" name="Location" id="Location"
+                                        placeholder="Location" />
+                                </td>
+                            </tr>
+                            <tr class="row" style="height: 45px">
+                                <td class="property-panel-content" colspan="2">
+                                    <ejs-datepicker #startTime id='StartTime' class="e-start-time" [showClearButton]=false name="StartTime"
+                                        placeholder="Start Time"></ejs-datepicker>
+                                </td>
+                            </tr>
+                            <tr class="row" style="height: 45px">
+                                <td class="property-panel-content" colspan="2">
+                                    <ejs-datepicker #endTime id='EndTime' class="e-end-time" [showClearButton]=false name="EndTime"
+                                        placeholder="End Time"></ejs-datepicker>
+                                </td>
+                            </tr>
+                            <tr class="row" style="height: 45px">
+                                <td class="e-field button-customization" style="width: 50%;">
+                                    <button ejs-button id="seperateSearch" type="button" content="Search" (click)="searchOnClick()"></button>
+                                </td>
+                                <td class="e-field button-customization" style="width: 50%;">
+                                    <button ejs-button id="clear" content="Clear" type="button" (click)='clearOnClick()'></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form> -->
+            </div>
+        </div>
   </div>
   
 </div>

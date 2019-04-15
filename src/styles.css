@@ -4,3 +4,23 @@
 @import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 @import "../node_modules/@syncfusion/ej2-angular-buttons/styles/material.css";
 @import "../node_modules/@syncfusion/ej2-angular-navigations/styles/material.css";
+/* @import '../node_modules/@syncfusion/ej2-base/styles/bootstrap.css';  
+@import '../node_modules/@syncfusion/ej2-inputs/styles/bootstrap.css';  
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/bootstrap.css';  
+@import '../node_modules/@syncfusion/ej2-angular-grids/styles/bootstrap.css';  */
+@import '../node_modules/@syncfusion/ej2-schedule/styles/material.css'; 
+
+body{
+    background-color: #e0e8ef !important;
+    color: #424242 !important;
+    font-family: "Source Sans Pro", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-font-smoothing: antialiased !important;
+    min-height: 100% !important;
+}
+h2{
+    font-size: 20px !important;
+}

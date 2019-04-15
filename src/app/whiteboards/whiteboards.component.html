@@ -1,3 +1,43 @@
-<p>
-  whiteboards works!
-</p>
+<div class="whiteboard-container">
+  <div class="appointment-header">
+      <h3 class="appointment-label">Appointment</h3>
+      <button type="button" class="btn patient-details">Add Patient Details</button>
+  </div>
+  <div class="appointment-status">
+<div class="card-data ng-star-inserted" *ngFor='let data of arrayData'>
+  <div class="whiteboard-card">
+      <div class="wrapper"><div _ngcontent-c27="" class="header">
+        <h2 class="overflow-ellipsis" style="flex: 1 0 0">{{data.patientType}}</h2>
+        <div class="fas fa-thumbtack fa-lg pin-icon">
+        </div>
+      </div>
+      <div *ngFor="let insideData of data['patientStatus']">
+        {{insideData.name}}
+      <div class="column-container ng-star-inserted" [ngStyle]="{'background-color': insideData.background}" style="background-color: rgb(255, 255, 0); color: rgb(0, 0, 0);">
+        <div class="overflow-ellipsis" style="flex: 1 0 0">{{insideData.StatusType}}</div>
+        <div style="margin-left: 1rem" class="patient-count">{{insideData.statusCount}}</div>
+      </div>
+    </div>
+      <!-- <div class="column-container ng-star-inserted" style="background-color: rgb(255, 64, 129); color: rgb(255, 255, 255);">
+        <div class="overflow-ellipsis" style="flex: 1 0 0">Arrived</div>
+        <div style="margin-left: 1rem" class="ng-star-inserted">12</div>
+      </div>
+      <div  class="column-container ng-star-inserted" style="background-color: rgb(249, 62, 0); color: rgb(255, 255, 255);">
+        <div class="overflow-ellipsis" style="flex: 1 0 0">In Exam</div>
+        
+        <div style="margin-left: 1rem" class="ng-star-inserted">2</div>
+      </div>
+      <div class="column-container ng-star-inserted" style="background-color: rgb(130, 177, 255); color: rgb(0, 0, 0);">
+        <div class="overflow-ellipsis" style="flex: 1 0 0">Waiting to Pay</div>
+        <div style="margin-left: 1rem" class="ng-star-inserted">1</div>
+      </div>
+      <div class="column-container ng-star-inserted" style="background-color: rgb(189, 189, 189); color: rgb(0, 0, 0);">
+        <div class="overflow-ellipsis" style="flex: 1 0 0">Finished</div>
+        <div style="margin-left: 1rem" class="ng-star-inserted">0</div>
+      </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
