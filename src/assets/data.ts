@@ -19,6 +19,7 @@ export let scheduleData: Object[] = [
 ];
 
 export let timelineData: Object[] = [
+
     {
         patientType: 'Outpatients',
         patientStatus: [

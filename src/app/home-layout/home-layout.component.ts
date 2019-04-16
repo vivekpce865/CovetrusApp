@@ -43,26 +43,27 @@ public selectedDate: Date = new Date(2019, 0, 10);
 public eventSettings: EventSettingsModel = { dataSource: <Object[]>extend([], scheduleData, null, true) };
 public currentView: View = 'Week';
 oneventRendered(args: EventRenderedArgs): void {
+  
+  let categoryColor: string = args.data.CategoryColor as string;
+  if (!args.element || !categoryColor) {
+      return;
+  }
+  if (this.currentView === 'Agenda') {
+      (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
+  } else {
+      args.element.style.backgroundColor = categoryColor;
+  }
   switch (args.data.EventType) {
-          case 'Requested':
-              (args.element as HTMLElement).style.backgroundColor = '#F57F17';
-              break;
-          case 'Confirmed':
-              (args.element as HTMLElement).style.backgroundColor = '#7fa900';
-              break;
-          case 'New':
-              (args.element as HTMLElement).style.backgroundColor = '#8e24aa';
-              break;
-      }
-  // let categoryColor: string = args.data.CategoryColor as string;
-  // if (!args.element || !categoryColor) {
-  //     return;
-  // }
-  // if (this.currentView === 'Agenda') {
-  //     (args.element.firstChild as HTMLElement).style.borderLeftColor = categoryColor;
-  // } else {
-  //     args.element.style.backgroundColor = categoryColor;
-  // }
+    case 'Requested':
+        (args.element as HTMLElement).style.backgroundColor = '#F57F17';
+        break;
+    case 'Confirmed':
+        (args.element as HTMLElement).style.backgroundColor = '#7fa900';
+        break;
+    case 'New':
+        (args.element as HTMLElement).style.backgroundColor = '#8e24aa';
+        break;
+}
 }
 
 onPopupOpen(args: PopupOpenEventArgs): void {

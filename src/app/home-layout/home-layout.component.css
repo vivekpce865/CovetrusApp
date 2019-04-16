@@ -1,5 +1,5 @@
 .home-container{
-    margin-top: 10px;
+    margin-top: 75px;
     margin-left: 6%;
 }
 .home-container .appointment{
@@ -17,6 +17,7 @@
     border-radius: 8px;
     padding: 10px;
     line-height: 31px;
+    margin-bottom: 10px;
 }
 .home-container .legend li{
     padding-right: 5px;
@@ -78,7 +79,7 @@
 
 .search-customization{
     width: 25% !important;
-    padding: 10px !important;
+    padding: 0px 0px 0 5px !important;
 }
 .property-panel-section{
     padding: 10px !important;

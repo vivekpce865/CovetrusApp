@@ -1,19 +1,19 @@
 <div class="whiteboard-container">
   <div class="appointment-header">
       <h3 class="appointment-label">Appointment</h3>
-      <button type="button" class="btn patient-details">Add Patient Details</button>
+      <button type="button" data-toggle="modal" data-target="#myModal" class="btn patient-details">Add Patient Details</button>
   </div>
   <div class="appointment-status">
 <div class="card-data ng-star-inserted" *ngFor='let data of arrayData'>
   <div class="whiteboard-card">
       <div class="wrapper"><div _ngcontent-c27="" class="header">
         <h2 class="overflow-ellipsis" style="flex: 1 0 0">{{data.patientType}}</h2>
-        <div class="fas fa-thumbtack fa-lg pin-icon">
+        <div class="fas fa fa-plus fa-lg pin-icon"  data-toggle="modal" data-target="#myModal">
         </div>
       </div>
       <div *ngFor="let insideData of data['patientStatus']">
         {{insideData.name}}
-      <div class="column-container ng-star-inserted" [ngStyle]="{'background-color': insideData.background}" style="background-color: rgb(255, 255, 0); color: rgb(0, 0, 0);">
+      <div class="column-container ng-star-inserted" [ngStyle]="{'background-color': insideData.background}">
         <div class="overflow-ellipsis" style="flex: 1 0 0">{{insideData.StatusType}}</div>
         <div style="margin-left: 1rem" class="patient-count">{{insideData.statusCount}}</div>
       </div>
@@ -40,4 +40,41 @@
   </div>
 </div>
 
+</div>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Patient type</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="sel1">Select list:</label>
+          <select class="form-control" id="sel1"  #selectElem (change)="setNewUser(selectElem.value)">
+            <option *ngFor='let selectData1 of arrayData' value={{selectData1.patientType}}>{{selectData1.patientType}}</option>
+          
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sel1">Select list:</label>
+          <select class="form-control" id="sel1" >
+            <option  *ngFor="let insideData of insideData" value={{insideData}}>{{insideData}}</option>
+            
+          </select>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+      </div>
+
+    </div>
+  </div>
 </div>
