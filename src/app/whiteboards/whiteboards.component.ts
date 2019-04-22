@@ -2,6 +2,7 @@ import { Component, OnInit ,Inject} from '@angular/core';
 import { timelineData } from '../../assets/data';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { dataBinding } from '@syncfusion/ej2-schedule';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 
 // import './dialog-data.html'
 export interface DialogData {
@@ -16,20 +17,61 @@ export class WhiteboardsComponent implements OnInit {
   arrayData: any;
   selectData : any;
   insideData = [];
-  constructor(public dialog: MatDialog) {}
+  submitted = false;
+  username = new FormControl('')
+  selectType = new FormControl('')
+  selectTypeData = new FormControl('')
+  loginForm: FormGroup = this.formBuilder.group({
+    username: this.username,
+  });
+  patientType: FormGroup = this.formBuilder.group({
+    selectType: this.selectType,
+    selectTypeData: this.selectTypeData
+  });
 
+  constructor(public dialog: MatDialog, 
+    private formBuilder: FormBuilder) {}
+  //   registerForm = this.formBuilder.group({
+  //     firstName: ['', Validators.required],
+
+     
+  // });
   ngOnInit() {
+
     this.arrayData = timelineData;
     this.insideData = ["1","2","3","4"] 
   }
-
-  openDialog() {
-    this.dialog.open(DialogDataExampleDialog, {
-      data: {
-        animal: 'panda'
-      }
-    });
+  login() {
+    console.log(this.loginForm.value);
+    const newField = { patientType: this.loginForm.value.username};
+    this.arrayData.push(newField)
+      // this.arrayData.map(v => {
+      //   if(v['code'] ===this.arrayData.getNodeDetails.parentID){
+      //     v['countries'].map(c =>{
+      //       if(c.code === this.arrayData.getNodeDetails.id){
+      //         v['countries'].push(newField)
+      //       } 
+      //     })
+      //   }
+      // })
+    
   }
+  submittype(){
+    this.arrayData.map(v => {
+      if(v.patientType === this.patientType.value.selectType){
+v.patientStatus.map(v1 =>{
+  if(v1.StatusType === this.patientType.value.selectTypeData){
+v1.statusCount ++;
+  }
+})
+      }
+    })
+    const newField1 =[{ patientType: this.loginForm.value.username,
+      
+      patientStatus:this.patientType.value
+    }];
+  }
+ 
   setNewUser(type){
     console.log(type)
     // if (type == "Outpatients") {
@@ -60,11 +102,3 @@ export class WhiteboardsComponent implements OnInit {
       }
 }
 
-
-@Component({
-  selector: 'dialog-data-example-dialog',
-  templateUrl: '../dialog-data.html',
-})
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-}

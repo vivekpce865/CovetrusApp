@@ -5,6 +5,7 @@ import { FullCalendarModule } from 'ng-fullcalendar';
 import { TimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +22,8 @@ import { SidebarModule, MenuAllModule, TreeViewAllModule} from '@syncfusion/ej2-
 import { RadioButtonModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HomeLayoutComponent } from './home-layout/home-layout.component';
-import { WhiteboardsComponent, DialogDataExampleDialog } from './whiteboards/whiteboards.component';
+import { WhiteboardsComponent} from './whiteboards/whiteboards.component';
+import { WhiteboardComponent } from './whiteboard/whiteboard.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,8 @@ import { WhiteboardsComponent, DialogDataExampleDialog } from './whiteboards/whi
     SideBarComponent,
     HomeLayoutComponent,
     WhiteboardsComponent,
-    DialogDataExampleDialog
+    WhiteboardComponent
   ],
-  entryComponents: [DialogDataExampleDialog],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +46,8 @@ import { WhiteboardsComponent, DialogDataExampleDialog } from './whiteboards/whi
     RecurrenceEditorAllModule,
     TimePickerModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

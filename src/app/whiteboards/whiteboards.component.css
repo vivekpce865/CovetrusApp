@@ -40,7 +40,7 @@
     font-weight: bold;
 }
 .appointment-status{
-    display: flex;
+    
 }
 .patient-details{    
     margin-right: 16px;
@@ -51,15 +51,19 @@
 }
 .appointment-header{
     display: flex;
-    justify-content: space-between;
     padding: 5px;
 }
 .card-data{
     width: 25%;
     padding: 5px;
+    display: inline-block;
 }
 .pin-icon{
     color: green;
+}
+.appointment-add{
+    margin: 13px 9px 0px;
+    cursor: pointer;
 }
 
 

@@ -24,7 +24,7 @@ export let timelineData: Object[] = [
         patientType: 'Outpatients',
         patientStatus: [
             {StatusType: 'Scheduled Or Confirmed', statusCount:'5', background:'rgb(255, 255, 0)'},
-            {StatusType: 'arrived', statusCount:'9', background:'rgb(255, 64, 129)'},
+            {StatusType: 'Arrived', statusCount:'9', background:'rgb(255, 64, 129)'},
             {StatusType: 'inExam', statusCount:'2', background:'rgb(130, 177, 255)'},
             {StatusType: 'Waiting to Pay', statusCount:'0', background:'rgb(130, 177, 255)'},
             {StatusType: 'Finished', statusCount:'4', background:'rgb(189, 189, 189)'}
